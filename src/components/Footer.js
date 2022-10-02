@@ -1,6 +1,11 @@
 import styled from "styled-components";
+import {useState} from "react"
+import iconeErro from "../assets/img/icone_erro.png"
+import iconeCerto from "../assets/img/icone_certo.png"
+import iconeQuase from "../assets/img/icone_quase.png"
 
 export default function Footer(props) {
+    const[contador, setContador] = useState(0)
 
     function ficaVermelho() {
         let novoArray = [...props.cores]
@@ -8,6 +13,8 @@ export default function Footer(props) {
             if(novoArray[i].ativo === true && novoArray[i].concluido === false){
                 novoArray[i].cor = "#FF3030"
                 novoArray[i].concluido = true
+                setContador(contador + 1)
+                novoArray[i].icone = iconeErro
                 props.setCores([...novoArray]); 
             }
         }  
@@ -19,6 +26,8 @@ export default function Footer(props) {
             if(novoArray[i].ativo === true && novoArray[i].concluido === false){
                 novoArray[i].cor = "#FF922E"
                 novoArray[i].concluido = true
+                setContador(contador + 1)
+                novoArray[i].icone = iconeQuase
                 props.setCores([...novoArray]); 
             }
         }  
@@ -30,6 +39,8 @@ export default function Footer(props) {
             if(novoArray[i].ativo === true && novoArray[i].concluido === false){
                 novoArray[i].cor = "#2FBE34"
                 novoArray[i].concluido = true
+                setContador(contador + 1)
+                novoArray[i].icone = iconeCerto
                 props.setCores([...novoArray]); 
             }
         }  
@@ -43,7 +54,7 @@ export default function Footer(props) {
                 <Botao cor="#FF922E" onClick={ficaLaranja}>Quase não lembrei</Botao>
                 <Botao cor="#2FBE34" onClick={ficaVerde}>Zap!</Botao>
             </BotaoContainer>
-            <p>0/8 Concluídos</p>
+            <p>{contador}/8 Concluídos</p>
         </FooterContainer>
         </>
     )

@@ -1,8 +1,6 @@
 import {useState} from "react"
 import styled from "styled-components"
-import setaPlay from "../assets/img/seta_play.png"
 import setaVirar from "../assets/img/seta_virar.png"
-
 
 
 export default function Flashcard(props) {
@@ -40,7 +38,7 @@ export default function Flashcard(props) {
         {exibeFechado && (
         <CardFechado cor={props.cores[props.indice].cor} onClick={exibirPergunta}>
             <p>Pergunta {props.dados.numero}</p>
-            <img src={setaPlay}/>
+            <img src={props.cores[props.indice].icone}/>
         </CardFechado>
         )}
         {exibePergunta && (
@@ -76,6 +74,7 @@ const CardFechado = styled.div`
     font-size: 16px;
     line-height: 19px;
     color: ${props => props.cor};
+    text-decoration-line: ${props => props.cor !== "#333333" ? "line-through" : "none"};
     }
 `;
 
