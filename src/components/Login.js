@@ -36,7 +36,7 @@ const LoginContainer = styled.div`
 `;
 
 const CenterDiv = styled.div`
-  height: 50vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
