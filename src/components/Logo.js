@@ -16,6 +16,9 @@ const LogoContainer = styled.div`
   margin: 40px 0 20px 0;
   img {
     width: 52px;
+    @media (max-width:330px) {
+      width: 40px;
+    }
   }
 
   h1 {
@@ -26,5 +29,8 @@ const LogoContainer = styled.div`
     line-height: 45px;
     color: #ffffff;
     margin-left: 20px;
+    @media (max-width:330px) {
+      font-size:30px;
+    }
   }
 `;

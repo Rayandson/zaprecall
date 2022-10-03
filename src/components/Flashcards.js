@@ -10,12 +10,19 @@ export default function Flashcards(props) {
     return(
         <>
         <FlashcardsContainer>
-        {flashcards.map((obj, index) => <Flashcard indice={index} cores={props.cores} setCores={props.setCores} dados={obj}/>)}
+        {flashcards.map((obj) => <Flashcard contador={props.contador} setContador={props.setContador} dados={obj}/>)}
         </FlashcardsContainer>
         </>
     )
 }
 
 const FlashcardsContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 padding-bottom: 50px;
+@media (max-width:360px) {
+      width: 100%;
+    }
 `;

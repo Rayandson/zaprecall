@@ -1,25 +1,21 @@
 import {useState} from "react"
 import styled from "styled-components";
+import Login from "./Login"
 import Logo from "./Logo";
 import Flashcards from "./Flashcards";
 import Footer from "./Footer";
-import setaPlay from "../assets/img/seta_play.png"
-import iconeErro from "../assets/img/icone_erro.png"
-import iconeCerto from "../assets/img/icone_certo.png"
-import iconeQuase from "../assets/img/icone_quase.png"
 
-
-// const cores = [{vermelho: "#FF3030"}, {laranja:"#2FBE34"}, {verde: "#2FBE34"}]
-
-// Todo adicionar onClick
 export default function App() {
-    const [cores, setCores] = useState([{cor:"#333333", ativo:false, concluido:false, icone: setaPlay},{cor:"#333333", ativo:false, concluido:false, icone: setaPlay},{cor:"#333333", ativo:false, concluido:false, icone: setaPlay},{cor:"#333333", ativo:false, concluido:false, icone: setaPlay},{cor:"#333333", ativo:false, concluido:false, icone: setaPlay},{cor:"#333333", ativo:false, concluido:false, icone: setaPlay},{cor:"#333333", ativo:false, concluido:false, icone: setaPlay},{cor:"#333333", ativo:false, concluido:false, icone: setaPlay}])
+   
+    const[contador, setContador] = useState(0)
+    
     return (
         <>
+        <Login />
         <AppContainer>
             <Logo />
-            <Flashcards cores={cores} setCores={setCores}/>
-            <Footer cores={cores} setCores={setCores}/>
+            <Flashcards contador={contador} setContador={setContador}/>
+            <Footer contador={contador}/>
         </AppContainer>
         </>
     )
@@ -34,5 +30,5 @@ const AppContainer = styled.div`
   align-items: center;
   margin: 0px;
   padding: 0px;
-  margin-bottom: 111px;
+  margin-bottom: 70px;
 `;
