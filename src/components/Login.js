@@ -66,5 +66,8 @@ const CenterDiv = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
+    &:hover {
+        cursor: pointer;
+    }
   }
 `;

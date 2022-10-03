@@ -90,6 +90,9 @@ const CardFechado = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  &:hover {
+        cursor: pointer;
+    }
     p {
     font-family: 'Recursive', sans-serif;
     font-style: normal;
@@ -127,6 +130,9 @@ const Pergunta = styled.div`
     position: absolute;
   bottom: 10px;
   right: 10px;
+  &:hover {
+        cursor: pointer;
+    }
   }
   @media (max-width:360px) {
       width: 80%;
@@ -171,4 +177,7 @@ border: none;
 background-color: ${props => props.cor};
 font-family: 'Recursive', sans-serif;
 color: #FFFFFF;
+&:hover {
+        cursor: pointer;
+    }
 `;
